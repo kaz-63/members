@@ -1,0 +1,212 @@
+#header-nav {
+    z-index: 100;
+}
+.container {
+    max-width: 800px;
+}
+
+/* ヘッダー */
+#header {
+    width: 100%;
+    background: #333;
+}
+#header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+#header.fixed {
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    left: 0;
+}
+#g-navi {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+#g-navi li a {
+    text-decoration: none;
+    color: #666;
+    padding: 10px;
+}
+
+/************************************
+    ログイン・新規登録のフォーム
+************************************/
+.login-reg-form-tab--area {
+    max-width: 600px;
+}
+ul.login-reg-form-tab .nav-item {
+    width: 50%;
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+ul.login-reg-form-tab .nav-item .nav-link {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    color: var(--bs-dark); /* = text-body*/
+    border-color: #ccc #ccc transparent;
+}
+ul.login-reg-form-tab .nav-item .nav-link:not(.active) {
+    background: #eee;
+    border-color: #ccc;
+}
+
+/* bootstrap Breakpoints "sm" */
+@media screen and (min-width: 576px) {
+    ul.login-reg-form-tab .nav-item {
+        font-size: 1.25rem;
+    }
+
+    ul.login-reg-form-tab .nav-item .nav-link {
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+    }
+}
+
+ul.login-reg-form-tab + .card {
+    border: 1px solid #ccc;
+    border-top: none;
+    border-radius: 0 0 0.25rem 0.25rem;
+}
+
+/************************************
+    ローディング
+************************************/
+#splash {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: #aaa;
+    z-index: 9999999;
+    text-align: center;
+    color: #fff;
+}
+
+#splash-logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+body {
+    background: #aaa;
+}
+
+body.appear {
+    background: #fff;
+}
+
+.splashbg {
+    display: none;
+    content: "";
+    position: fixed;
+    transform: scale(100);
+    background-color: #aaa;
+    z-index: 999;
+    top: calc(50% - 1rem);
+    left: calc(50% - 1rem);
+    width: 2rem;
+    height: 2rem;
+}
+
+body.appear .splashbg {
+    display: block;
+    border-radius: 50%;
+    animation-name: PageAnime;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes PageAnime {
+    0% {
+        transform: scale(100);
+    }
+
+    100% {
+        transform: scale(0);
+        display: none;
+    }
+}
+
+#container {
+    opacity: 0;
+}
+
+body.appear #container {
+    animation-name: PageAnimeAppear;
+    animation-duration: 1s;
+    animation-delay: 0.8s;
+    animation-fill-mode: forwards;
+    opacity: 0;
+}
+
+@keyframes PageAnimeAppear {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+/************************************
+    フォームスタイル
+************************************/
+.formValidate_msg {
+    margin: 0 !important;
+    line-height: 2.4;
+    color: #f32035;
+}
+.form_block {
+    padding: 0.9rem;
+    padding-top: 0;
+    margin: 0.6rem auto;
+    border: 1px solid #dadce0;
+    border-radius: 6px;
+    background-color: #fff;
+}
+.form_block h5 {
+    margin: 0;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+.form_block label {
+    font-weight: bold;
+    margin-bottom: 0.3rem;
+}
+.form_block label.required::after {
+    content: "（必須）";
+    color: #dc3546;
+}
+.form_block p {
+    margin: 0;
+    font-size: 0.9rem;
+    margin-bottom: 0.3rem;
+}
+.form-check .form-check-input {
+    margin-left: -1em;
+}
+@media screen and (max-width: 600px) {
+    .form_block p {
+        font-size: 0.8rem;
+    }
+}
+
+.overflow-ellipsis,
+.overflow-ellipsis_inner * {
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

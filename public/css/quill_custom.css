@@ -1,0 +1,92 @@
+/*
+  quill関連のカスタマイズデザイン
+*/
+.ql-container {
+    font-size: 16px;
+  }
+  .ql-toolbar.ql-snow {
+    padding: 6px 0px 6px 3px;
+  }
+  .ql-toolbar.ql-snow .ql-formats {
+    margin-right: 10px;
+  }
+  .ql-snow .ql-picker.ql-size {
+    width: 60px;
+  }
+  .ql-snow .ql-color-picker, .ql-snow .ql-icon-picker{
+    margin-right: 3px;
+  }
+  .ql-toolbar.ql-snow .ql-picker-label {
+    border: 1px solid transparent;
+    padding-left: 1px;
+    padding-right: 1.5em;
+    text-align: center;
+  }
+  .ql-snow .ql-color-picker .ql-picker-label, .ql-snow .ql-icon-picker .ql-picker-label {
+    padding: 0px 2px 2px;
+  }
+  .ql-snow .ql-picker.ql-size .ql-picker-label[data-value=small]::before, .ql-snow .ql-picker.ql-size .ql-picker-item[data-value=small]::before {
+    content: '小';
+    font-size: .8em;
+  }
+  .ql-snow .ql-picker.ql-size .ql-picker-label::before, .ql-snow .ql-picker.ql-size .ql-picker-item::before {
+    content: '標準';
+    font-size: 1em;
+  }
+  .ql-snow .ql-picker.ql-size .ql-picker-label[data-value=large]::before, .ql-snow .ql-picker.ql-size .ql-picker-item[data-value=large]::before {
+    content: '大';
+    font-size: 1.2em;
+  }
+  .ql-snow .ql-picker.ql-size .ql-picker-label[data-value=huge]::before, .ql-snow .ql-picker.ql-size .ql-picker-item[data-value=huge]::before {
+    content: '特大';
+    font-size: 1.3em;
+  }
+  .ql-snow .ql-picker.ql-size .ql-picker-label::before{
+    font-size: 1em!important;
+  }
+  .ql-editor .ql-size-huge {
+    font-size: 2em;
+  }
+  .ql-snow .ql-picker.ql-color-picker.ql-expanded .ql-picker-options {
+    display: flex;
+    top: 110%;
+    left: calc(-90px + 50%);
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .ql-snow .ql-color-picker .ql-picker-options {
+    padding: 6px;
+    width: 180px;
+  }
+  .ql-snow .ql-color-picker .ql-picker-item {
+    border: 1px solid #ddd;
+    height: 42px;
+    width: 42px;
+    margin: 6px;
+  }
+  .ql-snow .ql-tooltip[data-mode=link]::before {
+    content: "リンク先：";
+  }
+  .ql-snow .ql-tooltip.ql-editing a.ql-action::after {
+    content: '決定';
+  }
+
+
+  /* quill_content */
+  .quill_content{
+    height: auto;
+    max-height: calc(100% - 5rem);
+    overflow: overlay;
+    overflow-y: scroll;
+  }
+  @media screen and(max-width:600px) {
+    .quill_content{
+      max-height: calc(100% - 6rem);
+    }
+  }
+  .quill_content img{
+    display: block;
+    max-width: 80%;
+    margin: 0.6rem auto;
+  }
